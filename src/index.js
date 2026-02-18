@@ -1,9 +1,9 @@
 import * as _ from 'lodash-es'
-import parseFile from './parser.js'
+import getParseFile from './parser.js'
 
 const genDiff = (filepath1, filepath2) => {
-  const data1 = parseFile(filepath1)
-  const data2 = parseFile(filepath2)
+  const data1 = getParseFile(filepath1)
+  const data2 = getParseFile(filepath2)
 
   const allKeys = _.union(Object.keys(data1), Object.keys(data2))
 
