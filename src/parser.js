@@ -1,4 +1,4 @@
-import * as fs from 'fs'
+import * as fs from 'node:fs'
 
 const getParseFile = (path) => {
   const filePath = fs.readFileSync(path, { encoding: 'utf-8' })
