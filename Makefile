@@ -4,13 +4,13 @@ install:
 
 # Запуск линтера
 lint:
-	npm run lint
+	npx eslint .
 
 # Запуск тестов
 test:
 	npx jest
 
-# Запуск тестов с покрытием (для SonarQube)
+# Запуск тестов с покрытием
 test-coverage:
 	npx jest --coverage --coverageReporters=lcov
 
