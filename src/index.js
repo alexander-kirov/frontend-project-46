@@ -14,18 +14,18 @@ const genDiff = (filepath1, filepath2) => {
     const value2 = data2[key]
 
     if (Object.hasOwn(data1, key) && !Object.hasOwn(data2, key)) {
-      return [`- ${key}: ${String(value1)}`]
+      return [`  - ${key}: ${String(value1)}`]
     }
 
     if (!Object.hasOwn(data1, key) && Object.hasOwn(data2, key)) {
-      return [`+ ${key}; ${String(value2)}`]
+      return [`  + ${key}: ${String(value2)}`]
     }
 
     if (value1 === value2) {
-      return [`  ${key}: ${String(value1)}`]
+      return [`    ${key}: ${String(value1)}`]
     }
 
-    return [`- ${key}: ${String(value1)}`, `+ ${key}: ${String(value2)}`]
+    return [`  - ${key}: ${String(value1)}`, `  + ${key}: ${String(value2)}`]
   })
 
   const result = ['{', ...diff, '}'].join('\n')
