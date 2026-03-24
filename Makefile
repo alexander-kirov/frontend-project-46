@@ -1,3 +1,7 @@
+# Установка зависимостей
+install:
+	npm ci
+
 # Запуск линтера
 lint:
 	npm run lint
@@ -6,8 +10,8 @@ lint:
 test:
 	npx jest
 
-# Покрытие тестами
+# Запуск тестов с покрытием (для SonarQube)
 test-coverage:
 	npx jest --coverage --coverageReporters=lcov
 
-.PHONY: test-coverage
+.PHONY: install lint test test-coverage
