@@ -1,16 +1,19 @@
 /** @type {import('jest').Config} */
 export default {
   testEnvironment: 'node',
-  // Тестовые файлы
   testMatch: ['**/__tests__/**/*.test.js'],
-  // Генерация покрытия кода
+
   collectCoverage: true,
-  coverageDirectory: 'coverage', // папка для отчётов
+  coverageDirectory: 'coverage',
   coverageReporters: ['json', 'lcov', 'text', 'clover'],
 
-  // Какие файлы включать в покрытие
   collectCoverageFrom: [
     'src/**/*.js',
+    'gendiff.js',
+    '!**/__tests__/**',
+    '!**/node_modules/**',
+    '!coverage/**',
   ],
-  transform: {},
+
+  coveragePathIgnorePatterns: ['/node_modules/'],
 }
