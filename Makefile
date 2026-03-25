@@ -8,10 +8,10 @@ lint:
 
 # Запуск тестов
 test:
-	npx jest
+	npx jest --no-coverage
 
 # Запуск тестов с покрытием
 test-coverage:
-	npx jest --coverage --coverageReporters=lcov
+	npx jest --coverage --coverageReporters=lcov --coverageReporters=text
 
 .PHONY: install lint test test-coverage
